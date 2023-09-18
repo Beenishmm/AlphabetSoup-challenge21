@@ -27,7 +27,23 @@ The purpose of this analysis is to create a deep learning model capable of predi
 
 *Compiling, Training, and Evaluating the Model*
 
-- We designed a neural network model with two hidden layers, comprising 80 neurons in the first layer and 40 neurons in the second layer. We used the Rectified Linear Unit (ReLU) activation function for these layers.
+In the defined neural network model for the AlphabetSoup Charity Funding Predictor, it's important to evaluate its performance based on the chosen architecture:
+
+**Evaluation:**
+
+1. **Input Layer:**
+   - The input layer is dynamically determined by the shape of the input data, so it adjusts automatically to the number of features in the dataset. This flexibility is helpful as it accommodates different datasets without the need for manual specification.
+
+2. **First Hidden Layer:**
+   - The first hidden layer consists of 80 neurons with a sigmoid activation function. Using sigmoid introduces non-linearity to the model, which can be beneficial for capturing complex relationships in the data. However, the choice of 80 neurons may require further investigation and tuning. A larger number of neurons may lead to overfitting, while a smaller number may result in underfitting.
+
+3. **Second Hidden Layer:**
+   - The second hidden layer includes 40 neurons with the ReLU activation function. ReLU is an excellent choice for hidden layers, as it addresses the vanishing gradient problem and is computationally efficient. The choice of 40 neurons should be evaluated through experimentation. It's important to monitor the model's performance and consider increasing or decreasing the number of neurons based on validation results.
+
+4. **Output Layer:**
+   - The output layer consists of a single neuron with a sigmoid activation function. This is a suitable configuration for binary classification tasks. The sigmoid activation function ensures that the model produces output in the [0, 1] range, representing the probability of a positive outcome (in this case, successful funding). 
+
+In summary, the neural network architecture you've defined is a reasonable starting point for the problem. However, the success of the model also depends on other factors, such as data quality, preprocessing, and hyperparameter tuning. It's essential to evaluate the model's performance on both training and validation data, and potentially use techniques like cross-validation to fine-tune the hyperparameters, including the number of neurons and layers. Additionally, monitoring metrics like accuracy, precision, recall, and F1-score can provide a more comprehensive assessment of the model's effectiveness in classifying successful and unsuccessful funding applications.
 
 - Unfortunately, we were unable to achieve the target model performance of greater than 75% accuracy.
 
